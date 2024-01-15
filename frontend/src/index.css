@@ -1,0 +1,123 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+:root {
+    --primary: #2E86AB; 
+    --error: #e7195a; 
+    --background: #EAF6F6; 
+    --text-dark: #1C2833; 
+    --text-light: #555;
+    --container-max-width: 1400px;
+    --border-radius: 4px;
+    --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+    --font-size-standard: 0.9em;
+    --font-size-large: 1.2em;
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+  }
+  
+
+body {
+  background: var(--background);
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  background: #fff;
+}
+
+header .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-small) var(--spacing-medium);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.pages {
+  max-width: var(--container-max-width);
+  padding: var(--spacing-medium);
+  margin: 0 auto;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: var(--spacing-medium);
+}
+
+.song-details {
+  background: #fff;
+  border-radius: 10px;
+  border-radius: var(--border-radius);
+  margin: var(--spacing-medium) auto;
+  padding: var(--spacing-medium);
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+
+.song-details h4 {
+  margin: 0 0 var(--spacing-small) 0;
+  font-size: var(--font-size-large);
+  color: var(--primary);
+}
+
+.song-details p {
+  margin: 0;
+  font-size: var(--font-size-standard);
+  color: var(--text-light);
+}
+
+.song-details span {
+  position: absolute;
+  top: var(--spacing-medium);
+  right: var(--spacing-medium);
+  cursor: pointer;
+  border-radius: 10px;
+  background: var(--background);
+  padding: var(--spacing-small);
+  color: var(--text-dark);
+}
+
+label,
+input {
+  display: block;
+}
+
+input {
+  padding: var(--spacing-small);
+  margin-top: var(--spacing-small);
+  margin-bottom: var(--spacing-medium);
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+}
+
+form button {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: var(--spacing-small);
+  font-family: "Raleway", sans-serif;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+div.error,
+input.error {
+  padding: var(--spacing-small);
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: var(--border-radius);
+  margin: var(--spacing-medium) 0;
+}
