@@ -23,7 +23,7 @@ var axios = require('axios');
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 
-var accessToken = ''; // Initialize an empty variable to store the access token
+var accessToken = '';
 
 var authOptions = {
   method: 'post',
@@ -39,7 +39,7 @@ axios(authOptions)
     accessToken = response.data.access_token; 
     console.log('Access Token:', accessToken);
 
-    var trackId = '';
+    var trackId = '4Sav8RLaXMBpTZX6xNPj0K';
     var apiUrl = `https://api.spotify.com/v1/tracks/${trackId}`;
   
     var config = {

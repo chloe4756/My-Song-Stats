@@ -28,24 +28,28 @@ const SongForm = () => {
                 setPopularity(response.data.popularity);
                 setError(null);
 
-                const song = { trackName, totalTracks, artistName, albumName, popularity };
+                const song = { trackName: response.data.name,
+                    totalTracks: response.data.album.total_tracks,
+                    artistName: response.data.artists[0].name,
+                    albumName: response.data.album.name,
+                    popularity: response.data.popularity };
                 console.log(JSON.stringify(song));
-                const response = await fetch('http://localhost:4000/api/songs', {
+                const fetchResponse = await fetch('http://localhost:4000/api/songs', {
                     method: 'POST',
                     body: JSON.stringify(song),
                     headers: {
                         'Content-Type': 'application/json'
                     }
                 });
-                const json = await response.json();
-                if (!response.ok) {
+                const json = await fetchResponse.json();
+                if (!fetchResponse.ok) {
                     setError(json.error);
                 }
-                if (response.ok) {
+                if (fetchResponse.ok) {
                     setUrl('');
                     setError(null);
                     console.log('new song added', json);
-                    window.location.reload();
+                    window.location.reload()
                 }
             }
         } catch (error) {

@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const {
     createSong,
     getSongs,
@@ -21,8 +22,8 @@ router.delete('/:id', deleteSong);
 
 const axios = require('axios');
 async function getSpotifyAccessToken() {
-    var client_id = '272527dc64e94096af3b4d6e9f9c1001';
-    var client_secret = '22d21bc045d944f3b03b7df685e4e80c';
+    var client_id = process.env.CLIENT_ID;
+    var client_secret = process.env.CLIENT_SECRET;
 
     var authOptions = {
         method: 'post',
